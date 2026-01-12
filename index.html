@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WORLD OF TELLUS</title>
+
+    <link rel="icon" type="image/png" href="/logo.png">
+
+    <meta property="og:title" content="WORLD OF TELLUS">
+    <meta property="og:description" content="LOCKED">
+    <meta property="og:image" content="/logo.png">
+    <meta property="og:url" content="https://worldoftellus.com">
+    <meta property="og:type" content="website">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: crosshair;
+        }
+
+        body {
+            background-color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: #000;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            width: 20vw;
+            height: auto;
+            margin-bottom: 1vw;
+            display: block;
+        }
+
+        h1 {
+            font-size: 0.9vw;
+            font-weight: 500;
+            letter-spacing: 0.1vw;
+            text-transform: uppercase;
+            margin-bottom: 2vw;
+            line-height: 1;
+        }
+
+        button {
+            background: none;
+            border: 0.05vw solid #000;
+            padding: 0.6vw 2.2vw;
+            font-size: 0.8vw;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.15vw;
+            transition: all 0.2s ease;
+            outline: none;
+            display: inline-block;
+        }
+
+        button:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        #status {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            margin-top: 1.2vw;
+            font-size: 0.5vw;
+            text-transform: uppercase;
+            letter-spacing: 0.08vw;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #status.visible {
+            opacity: 1;
+        }
+
+        .inner-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="inner-wrapper">
+            <img src="/logo.png" alt="Logo" class="logo">
+
+            <h1>TELLUS</h1>
+
+            <button id="enterBtn" onclick="handleEnter()">Enter</button>
+
+            <p id="status">Unavailable</p>
+        </div>
+    </div>
+
+    <script>
+        function handleEnter() {
+            const status = document.getElementById('status');
+            const btn = document.getElementById('enterBtn');
+
+            status.classList.add('visible');
+            btn.style.opacity = '0.4';
+            btn.innerText = 'Locked';
+
+            console.log("Access denied: 403");
+        }
+    </script>
+</body>
+
+</html>
